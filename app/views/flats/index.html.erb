@@ -1,0 +1,10 @@
+<h1>These are our flats!</h1>
+
+<% @flats.each do |flat| %>
+  <div>
+    <!-- The error came from not having defined a prefix for the show route -->
+    <h3><%= link_to flat['name'], flat_path(flat['id']) %></h3>
+    <img src="<%= flat['imageUrl'] %>" style="width: 300px" alt="<%= flat['name'] %>">
+    <p><%= flat['price'] %> <%= flat['priceCurrency'] %> </p>
+  </div>
+<% end %>
